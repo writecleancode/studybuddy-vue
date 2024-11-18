@@ -1,13 +1,20 @@
 <script lang="ts">
-import StudentsList from '@/components/StudentsList.vue';
+import { ref } from 'vue';
 import { students as studentsData } from '@/data/students';
+import StudentsList from '@/components/organisms/StudentsList.vue';
 
 export default {
 	data() {
-		const students = studentsData;
+		const students = ref(studentsData);
+
+		const deleteStudent = name => {
+			const filteredStudnets = students.value.filter(student => student.name !== name);
+			students.value = filteredStudnets;
+		};
 
 		return {
 			students,
+			deleteStudent,
 		};
 	},
 
@@ -18,10 +25,19 @@ export default {
 </script>
 
 <template>
-	<div>
-		<h1>Students List</h1>
-		<StudentsList v-bind:students />
+	<div class="main-wrapper">
+		<StudentsList v-bind:students v-bind:deleteStudent />
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.main-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 64px;
+	min-height: 100vh;
+	/* background-color: ${({ theme }) => theme.colors.lightGrey}; */
+	background-color: #f7f8fa;
+}
+</style>
