@@ -25,7 +25,7 @@ export default {
 	<li v-for="{ average, name, attendance } in students" class="styled-list-item">
 		<StyledAverage v-bind:average />
 		<StyledInfo v-bind:name v-bind:attendance />
-		<DeleteButton v-on:click="deleteStudent(name)" />
+		<DeleteButton v-on:delete-student="deleteStudent(name)" />
 	</li>
 </template>
 
