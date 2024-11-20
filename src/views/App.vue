@@ -4,7 +4,7 @@ import { students as studentsData } from '@/data/students';
 import StudentsList from '@/components/organisms/StudentsList.vue';
 
 export default {
-	data() {
+	setup() {
 		const students = ref(studentsData);
 
 		const deleteStudent = name => {

@@ -6,14 +6,13 @@ export default {
 		},
 	},
 
-	data() {
-		const bgColor = '';
-		// const bgColor = () => {
-		// 	if (average >= 4) return 'success';
-		// 	if (average >= 3) return 'warning';
-		// 	if (average >= 2) return 'error';
-		// 	return '';
-		// };
+	setup({ average }) {
+		const bgColor = () => {
+			if (average >= 4) return 'success-bg';
+			if (average >= 3) return 'warning-bg';
+			if (average >= 2) return 'error-bg';
+			return '';
+		};
 
 		return {
 			bgColor,
@@ -23,7 +22,7 @@ export default {
 </script>
 
 <template>
-	<div v-bind:class="`styled-average-wrapper ${bgColor}`">{{ average }}</div>
+	<div v-bind:class="`styled-average-wrapper ${bgColor()}`">{{ average }}</div>
 </template>
 
 <style lang="scss" scoped>
@@ -36,26 +35,20 @@ export default {
 	width: 32px;
 	height: 32px;
 	border-radius: 100px;
-	/* background-color: ${({ theme, $average }) => {
-		if ($average >= 4) return theme.colors.success;
-		if ($average >= 3) return theme.colors.warning;
-		if ($average >= 2) return theme.colors.error;
-		return theme.colors.grey;
-        }}; */
 	background-color: $grey;
 	color: $white;
 	font-size: $font-size-m;
 	font-weight: bold;
 
-	&.success {
+	&.success-bg {
 		background-color: $success;
 	}
 
-	&.warning {
+	&.warning-bg {
 		background-color: $warning;
 	}
 
-	&.error {
+	&.error-bg {
 		background-color: $error;
 	}
 }
