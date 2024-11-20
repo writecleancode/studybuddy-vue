@@ -19,6 +19,7 @@ export default {
 
 <template>
 	<div class="wrapper">
+		<h1 class="styled-title">Students List</h1>
 		<ul class="styled-list">
 			<StudentsListItem v-bind:students v-bind:deleteStudent />
 		</ul>
@@ -36,6 +37,12 @@ export default {
 	max-width: 500px;
 	background-color: $white;
 	box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
+}
+
+.styled-title {
+	margin-bottom: 2.4rem;
+	color: $dark-grey;
+	font-size: $font-size-xl;
 }
 
 .styled-list {
