@@ -1,6 +1,16 @@
+<script>
+import DeleteIcon from '@/assets/icons/DeleteIcon.vue';
+
+export default {
+	components: {
+		DeleteIcon,
+	},
+};
+</script>
+
 <template>
 	<button class="delete-button" aria-label="delete student from the list">
-		<img src="@/assets/icons/delete-icon.svg" alt="" />
+		<DeleteIcon />
 	</button>
 </template>
 
@@ -17,10 +27,5 @@
 	width: 24px;
 	height: 24px;
 	background-color: $grey;
-
-	img {
-		width: 60%;
-		height: 60%;
-	}
 }
 </style>
