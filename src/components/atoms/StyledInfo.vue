@@ -12,26 +12,26 @@ export default {
 </script>
 
 <template>
-	<div class="styled-info-wrapper">
-		<p class="styled-info-name">{{ name }}</p>
-		<p class="styled-info-attendance">attendance: {{ attendance }}</p>
+	<div class="wrapper">
+		<p class="styled-name">{{ name }}</p>
+		<p class="styled-attendance">attendance: {{ attendance }}</p>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
 
-.styled-info-wrapper {
+.wrapper {
 	margin-left: 24px;
 }
 
-.styled-info-name {
+.styled-name {
 	color: $dark-grey;
 	font-size: $font-size-l;
 	font-weight: bold;
 }
 
-.styled-info-attendance {
+.styled-attendance {
 	color: $dark-grey;
 	font-size: $font-size-s;
 }

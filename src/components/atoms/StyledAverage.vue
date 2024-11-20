@@ -8,9 +8,9 @@ export default {
 
 	setup({ average }) {
 		const bgColor = () => {
-			if (average >= 4) return 'success-bg';
-			if (average >= 3) return 'warning-bg';
-			if (average >= 2) return 'error-bg';
+			if (average >= 4) return 'bg-success';
+			if (average >= 3) return 'bg-warning';
+			if (average >= 2) return 'bg-error';
 			return '';
 		};
 
@@ -22,13 +22,13 @@ export default {
 </script>
 
 <template>
-	<div v-bind:class="`styled-average-wrapper ${bgColor()}`">{{ average }}</div>
+	<div class="wrapper" v-bind:class="bgColor()">{{ average }}</div>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
 
-.styled-average-wrapper {
+.wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,15 +40,15 @@ export default {
 	font-size: $font-size-m;
 	font-weight: bold;
 
-	&.success-bg {
+	&.bg-success {
 		background-color: $success;
 	}
 
-	&.warning-bg {
+	&.bg-warning {
 		background-color: $warning;
 	}
 
-	&.error-bg {
+	&.bg-error {
 		background-color: $error;
 	}
 }

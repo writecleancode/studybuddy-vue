@@ -25,7 +25,7 @@ export default {
 </script>
 
 <template>
-	<div class="main-wrapper">
+	<div class="app-wrapper">
 		<StudentsList v-bind:students v-bind:deleteStudent />
 	</div>
 </template>
@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
 
-.main-wrapper {
+.app-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
