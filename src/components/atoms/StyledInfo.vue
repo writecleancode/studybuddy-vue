@@ -18,23 +18,21 @@ export default {
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/styles/variables' as *;
+
 .styled-info-wrapper {
 	margin-left: 24px;
 }
 
 .styled-info-name {
-	/* color: ${({ theme }) => theme.colors.darkGrey};
-	font-size: ${({ theme }) => theme.fontSize.l}; */
-	color: #737c8e;
-	font-size: 1.7rem;
+	color: $dark-grey;
+	font-size: $font-size-l;
 	font-weight: bold;
 }
 
 .styled-info-attendance {
-	/* color: ${({ theme }) => theme.colors.darkGrey};
-	font-size: ${({ theme }) => theme.fontSize.s}; */
-	color: #737c8e;
-	font-size: 1.1rem;
+	color: $dark-grey;
+	font-size: $font-size-s;
 }
 </style>

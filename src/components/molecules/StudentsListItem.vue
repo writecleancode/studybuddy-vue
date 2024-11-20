@@ -29,7 +29,7 @@ export default {
 	</li>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .styled-list-item {
 	display: flex;
 	align-items: center;

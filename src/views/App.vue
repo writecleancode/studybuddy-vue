@@ -30,14 +30,15 @@ export default {
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/styles/variables' as *;
+
 .main-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 64px;
 	min-height: 100vh;
-	/* background-color: ${({ theme }) => theme.colors.lightGrey}; */
-	background-color: #f7f8fa;
+	background-color: $light-grey;
 }
 </style>

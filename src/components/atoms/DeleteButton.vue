@@ -4,7 +4,9 @@
 	</button>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use '@/assets/styles/variables' as *;
+
 .delete-button {
 	display: flex;
 	justify-content: center;
@@ -14,8 +16,7 @@
 	border-radius: 100px;
 	width: 24px;
 	height: 24px;
-	/* background-color: ${({ theme }) => theme.colors.grey}; */
-	background-color: #c0c7d6;
+	background-color: $grey;
 
 	img {
 		width: 60%;

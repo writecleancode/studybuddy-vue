@@ -7,7 +7,7 @@ export default {
 	},
 
 	data() {
-        const bgColor = ''
+		const bgColor = '';
 		// const bgColor = () => {
 		// 	if (average >= 4) return 'success';
 		// 	if (average >= 3) return 'warning';
@@ -27,6 +27,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/styles/variables' as *;
+
 .styled-average-wrapper {
 	display: flex;
 	justify-content: center;
@@ -39,24 +41,22 @@ export default {
 		if ($average >= 3) return theme.colors.warning;
 		if ($average >= 2) return theme.colors.error;
 		return theme.colors.grey;
-        }};
-        color: ${({ theme }) => theme.colors.white};
-        font-size: ${({ theme }) => theme.fontSize.m}; */
-	background-color: #c0c7d6;
-	color: #fff;
-	font-size: 1.2rem;
+        }}; */
+	background-color: $grey;
+	color: $white;
+	font-size: $font-size-m;
 	font-weight: bold;
 
 	&.success {
-		background-color: #8fcb81;
+		background-color: $success;
 	}
 
 	&.warning {
-		background-color: #e1d888;
+		background-color: $warning;
 	}
 
 	&.error {
-		background-color: #cb8581;
+		background-color: $error;
 	}
 }
 </style>
