@@ -1,8 +1,10 @@
 <script>
 import StudentsListItem from '@/components/molecules/StudentsListItem.vue';
+import FormField from '@/components/molecules/FormField.vue';
 
 export default {
 	components: {
+		FormField,
 		StudentsListItem,
 	},
 
@@ -18,7 +20,10 @@ export default {
 </script>
 
 <template>
-	<div class="wrapper">
+	<div class="students-list-wrapper">
+		<FormField label="Name" id="name" name="name" />
+	</div>
+	<div class="students-list-wrapper">
 		<h1 class="styled-title">Students List</h1>
 		<ul class="styled-list">
 			<StudentsListItem v-bind:students v-bind:deleteStudent />
@@ -29,7 +34,7 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
 
-.wrapper {
+.students-list-wrapper {
 	margin: 25px;
 	padding: 32px 64px;
 	border-radius: 25px;

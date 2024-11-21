@@ -22,13 +22,13 @@ export default {
 </script>
 
 <template>
-	<div class="wrapper" v-bind:class="bgColor()">{{ average }}</div>
+	<div class="styled-average-wrapper" v-bind:class="bgColor()">{{ average }}</div>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
 
-.wrapper {
+.styled-average-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;

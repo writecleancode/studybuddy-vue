@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-	<div class="wrapper">
+	<div class="styled-info-wrapper">
 		<p class="styled-name">{{ name }}</p>
 		<p class="styled-attendance">attendance: {{ attendance }}</p>
 	</div>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
 
-.wrapper {
+.styled-info-wrapper {
 	margin-left: 24px;
 }
 
