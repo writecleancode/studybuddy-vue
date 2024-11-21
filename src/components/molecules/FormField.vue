@@ -35,7 +35,7 @@ export default {
 <template>
 	<div class="form-field-wrapper">
 		<StyledLabel v-bind:for="id">{{ label }}</StyledLabel>
-		<StyledInput v-bind:name v-bind:id v-bind:type v-bind:value v-on:handle-input-change="handleInputChange" />
+		<StyledInput v-bind:name v-bind:id v-bind:type v-bind:value v-on:input="handleInputChange" />
 	</div>
 </template>
 

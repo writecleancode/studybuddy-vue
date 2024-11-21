@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-	<button class="delete-button" aria-label="delete student from the list" v-on:click="$emit('deleteStudent')">
+	<button class="delete-button" aria-label="delete student from the list" >
 		<DeleteIcon />
 	</button>
 </template>

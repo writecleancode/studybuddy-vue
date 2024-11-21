@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-	<input v-bind:name v-bind:id v-bind:type v-bind:value v-on:input="$emit('handleInputChange', $event)" class="styled-input" />
+	<input v-bind:name v-bind:id v-bind:type v-bind:value class="styled-input" />
 </template>
 
 <style lang="scss" scoped>
