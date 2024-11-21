@@ -17,6 +17,12 @@ export default {
 			type: String,
 			default: 'text',
 		},
+		value: {
+			type: String,
+		},
+		handleInputChange: {
+			type: Function,
+		},
 	},
 
 	components: {
@@ -29,7 +35,7 @@ export default {
 <template>
 	<div class="form-field-wrapper">
 		<StyledLabel v-bind:for="id">{{ label }}</StyledLabel>
-		<StyledInput v-bind:name v-bind:id v-bind:type />
+		<StyledInput v-bind:name v-bind:id v-bind:type v-bind:value v-on:handle-input-change="handleInputChange" />
 	</div>
 </template>
 

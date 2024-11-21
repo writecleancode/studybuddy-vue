@@ -1,4 +1,6 @@
 <script>
+import { computed } from 'vue';
+
 export default {
 	props: {
 		average: {
@@ -6,11 +8,12 @@ export default {
 		},
 	},
 
-	setup({ average }) {
-		const bgColor = () => {
-			if (average >= 4) return 'bg-success';
-			if (average >= 3) return 'bg-warning';
-			if (average >= 2) return 'bg-error';
+	setup() {
+		const bgColor = average => {
+			const averageNumber = Number(average);
+			if (averageNumber >= 4) return 'bg-success';
+			if (averageNumber >= 3) return 'bg-warning';
+			if (averageNumber >= 2) return 'bg-error';
 			return '';
 		};
 
@@ -22,7 +25,7 @@ export default {
 </script>
 
 <template>
-	<div class="styled-average-wrapper" v-bind:class="bgColor()">{{ average }}</div>
+	<div class="styled-average-wrapper" v-bind:class="bgColor(average)">{{ average }}</div>
 </template>
 
 <style lang="scss" scoped>

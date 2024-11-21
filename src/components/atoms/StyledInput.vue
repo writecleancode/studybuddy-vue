@@ -10,12 +10,15 @@ export default {
 		type: {
 			type: String,
 		},
+		value: {
+			type: String,
+		},
 	},
 };
 </script>
 
 <template>
-	<input v-bind:name v-bind:id v-bind:type class="styled-input" />
+	<input v-bind:name v-bind:id v-bind:type v-bind:value v-on:input="$emit('handleInputChange', $event)" class="styled-input" />
 </template>
 
 <style lang="scss" scoped>
