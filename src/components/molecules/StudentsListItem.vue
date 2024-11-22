@@ -33,7 +33,7 @@ export default {
 .styled-list-item {
 	display: flex;
 	align-items: center;
-	padding: 24px 0;
+	padding: 2.4rem 0;
 	border-bottom: 1px solid #dfe2e8;
 
 	&:last-child {

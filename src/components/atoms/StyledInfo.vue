@@ -22,7 +22,7 @@ export default {
 @use '@/assets/styles/variables' as *;
 
 .styled-info-wrapper {
-	margin-left: 24px;
+	margin-left: 2.4rem;
 }
 
 .styled-name {

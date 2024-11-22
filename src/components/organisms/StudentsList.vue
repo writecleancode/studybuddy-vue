@@ -1,9 +1,10 @@
 <script>
 import StudentsListItem from '@/components/molecules/StudentsListItem.vue';
-import { ref } from 'vue';
+import StyledTitle from '@/components/atoms/StyledTitle.vue';
 
 export default {
 	components: {
+		StyledTitle,
 		StudentsListItem,
 	},
 
@@ -19,32 +20,14 @@ export default {
 </script>
 
 <template>
-	<div class="students-list-wrapper">
-		<h1 class="styled-title">Students List</h1>
-		<ul class="styled-list">
-			<StudentsListItem v-bind:students v-bind:deleteStudent />
-		</ul>
-	</div>
+	<StyledTitle>Students List</StyledTitle>
+	<ul class="styled-list">
+		<StudentsListItem v-bind:students v-bind:deleteStudent />
+	</ul>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/styles/variables' as *;
-
-.students-list-wrapper {
-	margin: 25px;
-	padding: 32px 64px;
-	border-radius: 25px;
-	width: 100%;
-	max-width: 500px;
-	background-color: $white;
-	box-shadow: 0 5px 15px -10px rgba(0, 0, 0, 0.3);
-}
-
-.styled-title {
-	margin-bottom: 2.4rem;
-	color: $dark-grey;
-	font-size: $font-size-xl;
-}
 
 .styled-list {
 	list-style: none;

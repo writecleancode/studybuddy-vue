@@ -1,14 +1,14 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
-import StudentsList from '@/components/organisms/StudentsList.vue';
-import Form from '@/components/organisms/Form.vue';
+import Dashboard from '@/views/Dashboard.vue';
+import AddStudent from '@/views/AddStudent.vue';
 
 const routes = [
-	{ path: '/', component: StudentsList },
-	{ path: '/add-student', component: Form },
+	{ path: '/', component: Dashboard },
+	{ path: '/add-student', component: AddStudent },
 ];
 
 export const router = createRouter({
-	history: createMemoryHistory(),
+	history: createWebHistory(),
 	routes,
 });
