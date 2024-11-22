@@ -1,14 +1,10 @@
 <script>
 import StudentsListItem from '@/components/molecules/StudentsListItem.vue';
-import FormField from '@/components/molecules/FormField.vue';
-import StyledButton from '@/components//atoms/StyledButton.vue';
 import { ref } from 'vue';
 
 export default {
 	components: {
-		FormField,
 		StudentsListItem,
-		StyledButton,
 	},
 
 	props: {
@@ -19,46 +15,10 @@ export default {
 			type: Function,
 		},
 	},
-
-	setup({ students }) {
-		const initialFormState = {
-			name: '',
-			attendance: '',
-			average: '',
-		};
-
-		const formValues = ref({ ...initialFormState });
-
-		const handleInputChange = e => (formValues.value[e.target.name] = e.target.value);
-
-		const handleAddUser = () => {
-			const newStudent = {
-				name: formValues.value.name,
-				attendance: formValues.value.attendance,
-				average: formValues.value.average,
-			};
-
-			students.unshift(newStudent);
-			formValues.value = { ...initialFormState };
-		};
-
-		return {
-			formValues,
-			handleInputChange,
-			handleAddUser,
-		};
-	},
 };
 </script>
 
 <template>
-	<form class="students-list-wrapper" v-on:submit.prevent="handleAddUser">
-		<h1 class="styled-title">Add new student</h1>
-		<FormField label="Name" id="name" name="name" v-bind:value="formValues.name" v-bind:handleInputChange />
-		<FormField label="Attendance" id="attendance" name="attendance" v-bind:value="formValues.attendance" v-bind:handleInputChange />
-		<FormField label="Average" id="average" name="average" v-bind:value="formValues.average" v-bind:handleInputChange />
-		<StyledButton type="submit">Add</StyledButton>
-	</form>
 	<div class="students-list-wrapper">
 		<h1 class="styled-title">Students List</h1>
 		<ul class="styled-list">
