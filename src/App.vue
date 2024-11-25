@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ref } from 'vue';
+import { provide, ref } from 'vue';
 import { students as studentsData } from '@/data/students';
 import MainTemplate from '@/components/templates/MainTemplate.vue';
 
@@ -39,16 +39,17 @@ export default {
 			formValues.value = { ...initialFormState };
 		};
 
+		provide('students', students);
+		provide('handleAddStudent', handleAddStudent);
+		provide('deleteStudent', deleteStudent);
+
 		// SPACE <-----------------------------
 
 		return {
-			students,
-			deleteStudent,
 			// SPACE <-----------------------------
 
 			formValues,
 			handleInputChange,
-			handleAddStudent,
 		};
 	},
 };
@@ -57,7 +58,7 @@ export default {
 <template>
 	<MainTemplate>
 		<main class="app-content-wrapper">
-			<RouterView v-bind:students v-bind:deleteStudent v-bind:formValues v-bind:handleInputChange v-bind:handleAddStudent />
+			<RouterView v-bind:formValues v-bind:handleInputChange />
 		</main>
 	</MainTemplate>
 </template>

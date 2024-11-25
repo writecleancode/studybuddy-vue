@@ -7,20 +7,11 @@ export default {
 		ViewWrapper,
 		StudentsList,
 	},
-
-	props: {
-		students: {
-			type: Array,
-		},
-		deleteStudent: {
-			type: Function,
-		},
-	},
 };
 </script>
 
 <template>
 	<ViewWrapper>
-		<StudentsList v-bind:students v-bind:deleteStudent />
+		<StudentsList />
 	</ViewWrapper>
 </template>

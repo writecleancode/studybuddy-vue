@@ -3,6 +3,7 @@ import ViewWrapper from '@/components/molecules/ViewWrapper.vue';
 import StyledTitle from '@/components/atoms/StyledTitle.vue';
 import FormField from '@/components/molecules/FormField.vue';
 import StyledButton from '@/components//atoms/StyledButton.vue';
+import { inject } from 'vue';
 
 export default {
 	components: {
@@ -13,15 +14,20 @@ export default {
 	},
 
 	props: {
-		handleAddStudent: {
-			type: Function,
-		},
 		formValues: {
 			type: Object,
 		},
 		handleInputChange: {
 			type: Function,
 		},
+	},
+
+	setup() {
+		const handleAddStudent = inject('handleAddStudent');
+
+		return {
+			handleAddStudent,
+		};
 	},
 };
 </script>

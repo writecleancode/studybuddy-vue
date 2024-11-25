@@ -2,14 +2,12 @@
 import StyledAverage from '@/components/atoms/StyledAverage.vue';
 import StyledInfo from '@/components/atoms/StyledInfo.vue';
 import DeleteButton from '@/components/atoms/DeleteButton.vue';
+import { inject } from 'vue';
 
 export default {
 	props: {
 		students: {
 			type: Object,
-		},
-		deleteStudent: {
-			type: Function,
 		},
 	},
 
@@ -17,6 +15,14 @@ export default {
 		StyledAverage,
 		StyledInfo,
 		DeleteButton,
+	},
+
+	setup() {
+		const deleteStudent = inject('deleteStudent');
+
+		return {
+			deleteStudent,
+		};
 	},
 };
 </script>

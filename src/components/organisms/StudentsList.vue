@@ -1,6 +1,7 @@
 <script>
 import StudentsListItem from '@/components/molecules/StudentsListItem.vue';
 import StyledTitle from '@/components/atoms/StyledTitle.vue';
+import { inject } from 'vue';
 
 export default {
 	components: {
@@ -8,13 +9,12 @@ export default {
 		StudentsListItem,
 	},
 
-	props: {
-		students: {
-			type: Object,
-		},
-		deleteStudent: {
-			type: Function,
-		},
+	setup() {
+		const students = inject('students');
+
+		return {
+			students,
+		};
 	},
 };
 </script>
@@ -22,7 +22,7 @@ export default {
 <template>
 	<StyledTitle>Students List</StyledTitle>
 	<ul class="styled-list">
-		<StudentsListItem v-bind:students v-bind:deleteStudent />
+		<StudentsListItem v-bind:students />
 	</ul>
 </template>
 
