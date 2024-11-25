@@ -2,33 +2,34 @@
 import StyledAverage from '@/components/atoms/StyledAverage.vue';
 import StyledInfo from '@/components/atoms/StyledInfo.vue';
 import DeleteButton from '@/components/atoms/DeleteButton.vue';
-import { inject } from 'vue';
 
 export default {
-	props: {
-		students: {
-			type: Object,
-		},
-	},
-
 	components: {
 		StyledAverage,
 		StyledInfo,
 		DeleteButton,
 	},
 
-	setup() {
-		const deleteStudent = inject('deleteStudent');
+	props: {
+		student: {
+			type: Object,
+		},
+	},
+
+	setup({ student }) {
+		const { average, name, attendance } = student;
 
 		return {
-			deleteStudent,
+			average,
+			name,
+			attendance,
 		};
 	},
 };
 </script>
 
 <template>
-	<li v-for="{ average, name, attendance } in students" class="styled-list-item">
+	<li class="styled-list-item">
 		<StyledAverage v-bind:average />
 		<StyledInfo v-bind:name v-bind:attendance />
 		<DeleteButton v-on:click="deleteStudent(name)" />

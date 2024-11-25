@@ -9,12 +9,10 @@ export default {
 		StudentsListItem,
 	},
 
-	setup() {
-		const students = inject('students');
-
-		return {
-			students,
-		};
+	props: {
+		students: {
+			type: Array,
+		},
 	},
 };
 </script>
@@ -22,7 +20,7 @@ export default {
 <template>
 	<StyledTitle>Students List</StyledTitle>
 	<ul class="styled-list">
-		<StudentsListItem v-bind:students />
+		<StudentsListItem v-for="student in students" v-bind:student />
 	</ul>
 </template>
 

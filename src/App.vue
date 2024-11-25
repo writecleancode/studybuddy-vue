@@ -11,46 +11,24 @@ export default {
 	setup() {
 		const students = ref(studentsData);
 
+		const handleAddStudent = formValues => {
+			const newStudent = {
+				name: formValues.name,
+				attendance: formValues.attendance,
+				average: formValues.average,
+			};
+
+			students.value.unshift(newStudent);
+		};
+
 		const deleteStudent = name => {
 			const filteredStudnets = students.value.filter(student => student.name !== name);
 			students.value = filteredStudnets;
 		};
 
-		// SPACE <-----------------------------
-
-		const initialFormState = {
-			name: '',
-			attendance: '',
-			average: '',
-		};
-
-		const formValues = ref({ ...initialFormState });
-
-		const handleInputChange = e => (formValues.value[e.target.name] = e.target.value);
-
-		const handleAddStudent = () => {
-			const newStudent = {
-				name: formValues.value.name,
-				attendance: formValues.value.attendance,
-				average: formValues.value.average,
-			};
-
-			students.value.unshift(newStudent);
-			formValues.value = { ...initialFormState };
-		};
-
 		provide('students', students);
 		provide('handleAddStudent', handleAddStudent);
 		provide('deleteStudent', deleteStudent);
-
-		// SPACE <-----------------------------
-
-		return {
-			// SPACE <-----------------------------
-
-			formValues,
-			handleInputChange,
-		};
 	},
 };
 </script>
@@ -58,7 +36,7 @@ export default {
 <template>
 	<MainTemplate>
 		<main class="app-content-wrapper">
-			<RouterView v-bind:formValues v-bind:handleInputChange />
+			<RouterView />
 		</main>
 	</MainTemplate>
 </template>
