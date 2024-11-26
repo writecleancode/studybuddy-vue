@@ -32,8 +32,8 @@ export default {
 
 		return {
 			formValues,
-			handleSubmitForm,
 			handleInputChange,
+			handleSubmitForm,
 		};
 	},
 };

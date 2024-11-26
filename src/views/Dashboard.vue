@@ -1,7 +1,7 @@
 <script>
+import { inject } from 'vue';
 import ViewWrapper from '@/components/molecules/ViewWrapper.vue';
 import StudentsList from '@/components/organisms/StudentsList.vue';
-import { inject } from 'vue';
 
 export default {
 	components: {

@@ -1,4 +1,5 @@
 <script>
+import { inject } from 'vue';
 import StyledAverage from '@/components/atoms/StyledAverage.vue';
 import StyledInfo from '@/components/atoms/StyledInfo.vue';
 import DeleteButton from '@/components/atoms/DeleteButton.vue';
@@ -18,11 +19,13 @@ export default {
 
 	setup({ student }) {
 		const { average, name, attendance } = student;
+		const deleteStudent = inject('deleteStudent');
 
 		return {
 			average,
 			name,
 			attendance,
+			deleteStudent,
 		};
 	},
 };
@@ -30,8 +33,8 @@ export default {
 
 <template>
 	<li class="styled-list-item">
-		<StyledAverage v-bind:average />
-		<StyledInfo v-bind:name v-bind:attendance />
+		<StyledAverage v-bind:average="average" />
+		<StyledInfo v-bind:name="name" v-bind:attendance="attendance" />
 		<DeleteButton v-on:click="deleteStudent(name)" />
 	</li>
 </template>

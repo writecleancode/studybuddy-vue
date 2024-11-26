@@ -1,7 +1,6 @@
 <script>
 import StudentsListItem from '@/components/molecules/StudentsListItem.vue';
 import StyledTitle from '@/components/atoms/StyledTitle.vue';
-import { inject } from 'vue';
 
 export default {
 	components: {
@@ -20,13 +19,11 @@ export default {
 <template>
 	<StyledTitle>Students List</StyledTitle>
 	<ul class="styled-list">
-		<StudentsListItem v-for="student in students" v-bind:student />
+		<StudentsListItem v-for="student in students" v-bind:student :key="student.name" />
 	</ul>
 </template>
 
 <style lang="scss" scoped>
-@use '@/assets/styles/variables' as *;
-
 .styled-list {
 	list-style: none;
 }
