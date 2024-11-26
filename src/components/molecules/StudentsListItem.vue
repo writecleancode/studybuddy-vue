@@ -33,8 +33,8 @@ export default {
 
 <template>
 	<li class="styled-list-item">
-		<StyledAverage v-bind:average="average" />
-		<StyledInfo v-bind:name="name" v-bind:attendance="attendance" />
+		<StyledAverage v-bind:average />
+		<StyledInfo v-bind:name v-bind:attendance />
 		<DeleteButton v-on:click="deleteStudent(name)" />
 	</li>
 </template>
