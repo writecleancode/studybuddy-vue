@@ -17,7 +17,7 @@ export default {
 
 	setup() {
 		const initialFormState = {
-			name: '',
+			name: 'Sylwia Śliwińska',
 			attendance: '',
 			average: '',
 		};

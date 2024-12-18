@@ -2,6 +2,8 @@
 import StyledLabel from '@/components/atoms/StyledLabel.vue';
 import StyledInput from '@/components/atoms/StyledInput.vue';
 
+import type { PropType } from 'vue';
+
 export default {
 	props: {
 		label: {
@@ -21,7 +23,7 @@ export default {
 			type: String,
 		},
 		handleInputChange: {
-			type: Function,
+			type: Function as PropType<(e: Event) => void>,
 		},
 	},
 
@@ -35,7 +37,7 @@ export default {
 <template>
 	<div class="form-field-wrapper">
 		<StyledLabel :for="id">{{ label }}</StyledLabel>
-		<StyledInput :name :id :type :value v-on:input="handleInputChange" />
+		<StyledInput :name :id :type :value v-on:input="handleInputChange" :data-testid="label" />
 	</div>
 </template>
 
