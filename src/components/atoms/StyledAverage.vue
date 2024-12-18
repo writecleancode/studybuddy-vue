@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 export default {
 	props: {
 		average: {
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <template>
-	<div class="styled-average-wrapper" v-bind:class="bgColor(average)">{{ average }}</div>
+	<div class="styled-average-wrapper" :class="bgColor(average)">{{ average }}</div>
 </template>
 
 <style lang="scss" scoped>

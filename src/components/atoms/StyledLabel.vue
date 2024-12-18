@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 export default {
 	props: {
 		for: {
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-	<label v-bind:for class="styled-label"><slot /></label>
+	<label :for class="styled-label"><slot /></label>
 </template>
 
 <style lang="scss" scoped>

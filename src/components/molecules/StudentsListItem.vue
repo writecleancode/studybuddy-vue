@@ -1,8 +1,9 @@
-<script>
-import { inject } from 'vue';
+<script lang="ts">
 import StyledAverage from '@/components/atoms/StyledAverage.vue';
 import StyledInfo from '@/components/atoms/StyledInfo.vue';
 import DeleteButton from '@/components/atoms/DeleteButton.vue';
+
+import { useStudentsContext } from '@/providers/useStudents';
 
 export default {
 	components: {
@@ -18,8 +19,8 @@ export default {
 	},
 
 	setup({ student }) {
+		const { deleteStudent } = useStudentsContext();
 		const { average, name, attendance } = student;
-		const deleteStudent = inject('deleteStudent');
 
 		return {
 			average,
@@ -33,8 +34,8 @@ export default {
 
 <template>
 	<li class="styled-list-item">
-		<StyledAverage v-bind:average />
-		<StyledInfo v-bind:name v-bind:attendance />
+		<StyledAverage :average />
+		<StyledInfo :name :attendance />
 		<DeleteButton v-on:click="deleteStudent(name)" />
 	</li>
 </template>

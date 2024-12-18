@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 export default {
 	props: {
 		name: {
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-	<input v-bind:name v-bind:id v-bind:type v-bind:value class="styled-input" />
+	<input :name :id :type :value class="styled-input" />
 </template>
 
 <style lang="scss" scoped>

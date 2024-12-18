@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import Navigation from '@/components/organisms/Navigation.vue';
 
 export default {

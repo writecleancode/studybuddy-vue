@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import StyledLabel from '@/components/atoms/StyledLabel.vue';
 import StyledInput from '@/components/atoms/StyledInput.vue';
 
@@ -34,8 +34,8 @@ export default {
 
 <template>
 	<div class="form-field-wrapper">
-		<StyledLabel v-bind:for="id">{{ label }}</StyledLabel>
-		<StyledInput v-bind:name v-bind:id v-bind:type v-bind:value v-on:input="handleInputChange" />
+		<StyledLabel :for="id">{{ label }}</StyledLabel>
+		<StyledInput :name :id :type :value v-on:input="handleInputChange" />
 	</div>
 </template>
 

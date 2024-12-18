@@ -1,7 +1,8 @@
-<script>
-import { inject } from 'vue';
+<script lang="ts">
 import ViewWrapper from '@/components/molecules/ViewWrapper.vue';
 import StudentsList from '@/components/organisms/StudentsList.vue';
+
+import { useStudentsContext } from '@/providers/useStudents';
 
 export default {
 	components: {
@@ -10,7 +11,7 @@ export default {
 	},
 
 	setup() {
-		const students = inject('students');
+		const { students } = useStudentsContext();
 
 		return {
 			students,
@@ -21,6 +22,6 @@ export default {
 
 <template>
 	<ViewWrapper>
-		<StudentsList v-bind:students />
+		<StudentsList :students />
 	</ViewWrapper>
 </template>

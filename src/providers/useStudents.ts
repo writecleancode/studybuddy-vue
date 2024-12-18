@@ -2,7 +2,7 @@ import { createProvider } from '@/utils/createProvider';
 import { students as studentsData } from '@/data/students';
 import { ref } from 'vue';
 
-export function useStudents() {
+function useStudents() {
 	const students = ref(studentsData);
 
 	const handleAddStudent = formValues => {
@@ -27,7 +27,4 @@ export function useStudents() {
 	};
 }
 
-const [useStudentsProvider, useStudentsContext] = createProvider('Students', useStudents);
-
-export { useStudentsProvider };
-export default useStudentsContext;
+export const [useStudentsProvider, useStudentsContext] = createProvider('Students', useStudents);

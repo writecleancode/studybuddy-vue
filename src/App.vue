@@ -1,7 +1,7 @@
 <script lang="ts">
-import { provide, ref } from 'vue';
-import { students as studentsData } from '@/data/students';
 import MainTemplate from '@/components/templates/MainTemplate.vue';
+
+import { useStudentsProvider } from './providers/useStudents';
 
 export default {
 	components: {
@@ -9,26 +9,7 @@ export default {
 	},
 
 	setup() {
-		const students = ref(studentsData);
-
-		const handleAddStudent = formValues => {
-			const newStudent = {
-				name: formValues.name,
-				attendance: formValues.attendance,
-				average: formValues.average,
-			};
-
-			students.value.unshift(newStudent);
-		};
-
-		const deleteStudent = name => {
-			const filteredStudnets = students.value.filter(student => student.name !== name);
-			students.value = filteredStudnets;
-		};
-
-		provide('students', students);
-		provide('handleAddStudent', handleAddStudent);
-		provide('deleteStudent', deleteStudent);
+		useStudentsProvider();
 	},
 };
 </script>

@@ -1,10 +1,13 @@
 import { inject, provide } from 'vue';
 
-export function createProvider(key: string | symbol, composable: () => object) {
+export function createProvider<T, Args extends unknown[]>(
+	key: string | symbol,
+	composable: (...args: Args) => T
+): [(...args: Args) => T, () => T] {
 	const keySymbol = typeof key === 'symbol' ? key : Symbol(key);
 
 	const useContext = () => {
-		const context = inject(keySymbol);
+		const context = inject<T>(keySymbol);
 
 		if (!context) {
 			throw new Error(`Attempted to access context outside of provider for ${keySymbol.toString()}`);
@@ -14,7 +17,7 @@ export function createProvider(key: string | symbol, composable: () => object) {
 	};
 
 	return [
-		(...args) => {
+		(...args: Args): T => {
 			const context = composable(...args);
 			provide(keySymbol, context);
 			return context;

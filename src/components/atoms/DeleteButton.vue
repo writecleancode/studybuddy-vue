@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import DeleteIcon from '@/assets/icons/DeleteIcon.vue';
 
 export default {

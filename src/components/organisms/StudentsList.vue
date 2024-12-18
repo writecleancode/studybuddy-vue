@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 import StudentsListItem from '@/components/molecules/StudentsListItem.vue';
 import StyledTitle from '@/components/atoms/StyledTitle.vue';
 
@@ -19,7 +19,7 @@ export default {
 <template>
 	<StyledTitle>Students List</StyledTitle>
 	<ul class="styled-list">
-		<StudentsListItem v-for="student in students" v-bind:student :key="student.name" />
+		<StudentsListItem v-for="student in students" :student :key="student.name" />
 	</ul>
 </template>
 

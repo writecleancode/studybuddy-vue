@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 export default {
 	props: {
 		is: {
@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-	<component v-bind:is class="view-wrapper">
+	<component :is class="view-wrapper">
 		<slot />
 	</component>
 </template>
