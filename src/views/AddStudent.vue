@@ -5,7 +5,7 @@ import FormField from '@/components/molecules/FormField.vue';
 import StyledButton from '@/components//atoms/StyledButton.vue';
 
 import { useStudentsContext } from '@/providers/useStudents';
-import { ref } from 'vue';
+import { useForm } from '@/composables/useForm';
 
 export default {
 	components: {
@@ -17,19 +17,17 @@ export default {
 
 	setup() {
 		const initialFormState = {
-			name: 'Sylwia Śliwińska',
+			name: '',
 			attendance: '',
 			average: '',
 		};
 
 		const { handleAddStudent } = useStudentsContext();
-		const formValues = ref({ ...initialFormState });
-
-		const handleInputChange = e => (formValues.value[e.target.name] = e.target.value);
+		const { formValues, handleInputChange, handleClearForm } = useForm(initialFormState);
 
 		const handleSubmitForm = () => {
 			handleAddStudent(formValues.value);
-			formValues.value = { ...initialFormState };
+			handleClearForm(initialFormState);
 		};
 
 		return {
